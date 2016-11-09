@@ -25,6 +25,7 @@
     "gulp": "^3.9.1",
     "gulp-webdriver": "^2.0.2",
     "ramda": "^0.22.1",
+    "selenium-standalone": "^5.8.0",
     "wdio-jasmine-framework": "^0.2.6",
     "webdriverio": "^4.2.15",
     "webpack": "^1.13.2",
