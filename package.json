@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "e2e"
+    "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install && ./node_modules/selenium-standalone/bin/selenium-standalone start"
   },
   "repository": {
     "type": "git",
