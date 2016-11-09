@@ -10,7 +10,7 @@ describe('WDIO waitforExist Suite', () => {
     it('waitForExist Timeout - test SHOULD FAIL', () => {
 	    browser.waitForExist('.ac-gn-link ac-gn-link-watch', 5000);
     });
-    // This test will be executed and should pass, but the results are not outputted
+	
     it('waitForExist Succeeds - Test should PASS', () => {
     	browser.waitForExist('.ac-gn-link', 5000);
     });
