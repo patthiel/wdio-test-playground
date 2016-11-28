@@ -8,7 +8,8 @@ Clone this repo
 ```
 cd wdio-test-playground
 npm install
-npm run selenium-standalone
+npm run selenium
+```
 
 Keep this open, selenium should now be running.
 
