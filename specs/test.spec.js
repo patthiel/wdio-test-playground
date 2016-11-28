@@ -1,8 +1,11 @@
-describe('WDIO waitforExist Suite', () => {
+xdescribe('WDIO waitforExist Suite', () => {
 
+    beforeAll(() => {
+        browser.url('http://www.apple.com');
+        console.log('This should not be logged!');
+    });
 	// This test will Fail in the WDIO Runner
     it('waitForExist Timeout - test will FAIL', () => {
-        browser.url('http://www.apple.com');
         browser.waitForExist('something', 5000);	
     });
 
