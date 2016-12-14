@@ -9,8 +9,9 @@ Clone this repo
 cd wdio-test-playground
 npm install
 npm run selenium
+```
 
 Keep this open, selenium should now be running.
 
 From another terminal tab, Run `gulp wdio` to start running the example test
-```
+
