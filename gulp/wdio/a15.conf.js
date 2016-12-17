@@ -1,21 +1,11 @@
-require('babel-core/register');
-require('babel-polyfill');
-
 const join = require('path').join;
 const chdir = require('process').chdir;
 const env = require('process').env;
 const argv = require('yargs').argv;
-const BASE_PROJECT = 'specs';
-const BRAND_PROJECT = 'brandweb';
-const ROOT = join(__dirname, '../..');
-const BASE_ROOT = join(ROOT, BASE_PROJECT);
-const SPECS_FOLDER = join(BASE_ROOT, '/**/*spec.js');
 // const specsFolder = env.specs ? env.specs.split(',') : [SPECS_FOLDER];
 
-process.chdir(ROOT);
-
 exports.config = {
-    
+
     //
     // ==================
     // Specify Test Files
@@ -26,7 +16,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        'specs/**/*.spec.js'
+        'specs/**/*-spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -84,8 +74,12 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'http://apple.com',
+    baseUrl: 'https://anthropologie.com',
     //
+    bail: 0,
+    //
+    // If you only want to run your tests until a specific amount of tests have failed use
+    // bail (default is 0 - don't bail, run all tests).
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
     //
@@ -134,18 +128,22 @@ exports.config = {
     //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
-        //
-        // Jasmine default timeout
-        defaultTimeoutInterval: 10000,
-        //
-        // The Jasmine framework allows interception of each assertion in order to log the state of the application
-        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
-        // an assertion fails.
-        expectationResultHandler: function(passed, assertion) {
-            // do something
-        }
+      //
+      // Jasmine default timeout
+      defaultTimeoutInterval: 1000 * 60,
+      //
+      // The Jasmine framework allows interception of each assertion in order to log the state of the application
+      // or website depending on the result. For example, it is pretty handy to take a screenshot every time
+      // an assertion fails.
+      expectationResultHandler: function(passed, assertion) {
+          // do something
+      },
+      //
+      // Make use of Jasmine-specific grep functionality
+      grep: null,
+      invertGrep: null
     },
-    
+
     //
     // =====
     // Hooks
@@ -159,52 +157,57 @@ exports.config = {
     // onPrepare: function (config, capabilities) {
     // },
     //
+    // Gets executed just before initialising the webdriver session and test framework. It allows you
+    // to manipulate configurations depending on the capability or spec.
+    beforeSession: function (config, capabilities, specs) {
+    },
+    //
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+    },
     //
     // Hook that gets executed before the suite starts
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: function (suite) {
+    },
     //
     // Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
     // beforeEach in Mocha)
-    // beforeHook: function () {
-    // },
+    beforeHook: function () {
+    },
     //
     // Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
     // afterEach in Mocha)
-    // afterHook: function () {
-    // },
+    afterHook: function () {
+    },
     //
     // Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
-    // beforeTest: function (test) {
-    // },
+    beforeTest: function (test) {
+    },
     //
     // Runs before a WebdriverIO command gets executed.
-    // beforeCommand: function (commandName, args) {
-    // },
+    beforeCommand: function (commandName, args) {
+    },
     //
     // Runs after a WebdriverIO command gets executed
-    // afterCommand: function (commandName, args, result, error) {
-    // },
+    afterCommand: function (commandName, args, result, error) {
+    },
     //
     // Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
-    // afterTest: function (test) {
-    // },
+    afterTest: function (test) {
+    },
     //
     // Hook that gets executed after the suite has ended
-    // afterSuite: function (suite) {
-    // },
+    afterSuite: function (suite) {
+    },
     //
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
-    // after: function (result, capabilities, specs) {
-    // },
+    after: function (result, capabilities, specs) {
+    },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
     // possible to defer the end of the process using a promise.
-    // onComplete: function(exitCode) {
-    // }
+    onComplete: function(exitCode) {
+    }
 }
