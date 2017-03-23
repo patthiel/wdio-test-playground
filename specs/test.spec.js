@@ -17,15 +17,15 @@ describe('WDIO waitforExist Suite', () => {
     it('should select by visible text', () => {
 	    browser.selectByVisibleText('[data-qa-product-sizes-select]', 'C');
 
-        // Pause for 5 seconds to observe, the select box has been updated
-        browser.pause(1000);
+        // Pause for 5 seconds to observe
+        browser.pause(5000);
     });
 	
     it('should select by value', () => {
     	browser.selectByValue('[data-qa-product-sizes-select]', 'F');
 
-        // Pause for 5 seconds to observe, the select box has been updated
-        browser.pause(1000);
+        // Pause for 5 seconds to observe
+        browser.pause(5000);
     });
 
 });

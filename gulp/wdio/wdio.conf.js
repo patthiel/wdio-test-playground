@@ -60,7 +60,10 @@ exports.config = {
         // 5 instance gets started at a time.
         maxInstances: 1,
         //
-        browserName: 'safari'
+        browserName: 'safari',
+        SafariOptions: {
+                useTechnologyPreview: true
+            }
     }],
     //
     // ===================

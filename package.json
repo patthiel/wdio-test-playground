@@ -4,8 +4,8 @@
   "description": "wdio testing playground",
   "main": "index.js",
   "scripts": {
-    "test": "e2e",
-    "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install && ./node_modules/selenium-standalone/bin/selenium-standalone start"
+    "test": "./node_modules/.bin/gulp wdio",
+    "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install --version=3.3.0 && ./node_modules/selenium-standalone/bin/selenium-standalone start --version=3.3.0"
   },
   "repository": {
     "type": "git",
