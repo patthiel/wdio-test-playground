@@ -1,18 +1,31 @@
 describe('WDIO waitforExist Suite', () => {
 
-	// This test will Fail in the WDIO Runner
-    it('waitForExist Timeout - test will FAIL', () => {
-        browser.url('http://www.apple.com');
-        browser.waitForExist('something', 5000);	
+    beforeAll(() => {
+        // Set Desktop viewport
+        browser.setViewportSize({ width: 1200, height: 900 });
     });
 
-    // This test will be executed and should fail, but the results are not outputted
-    it('waitForExist Timeout - test SHOULD FAIL', () => {
-	    browser.waitForExist('.ac-gn-link ac-gn-link-watch', 5000);
+
+    it('should navigate to the a product page', () => {
+        browser.url('https://www.anthropologie.com/shop/monogram-mug');
+    });
+
+    it('should poll for size select element to be visible', () => {
+        browser.waitForVisible('[data-qa-product-sizes-select]', 10000);
+    });
+
+    it('should select by visible text', () => {
+	    browser.selectByVisibleText('[data-qa-product-sizes-select]', 'C');
+
+        // Pause for 5 seconds to observe, the select box has been updated
+        browser.pause(1000);
     });
 	
-    it('waitForExist Succeeds - Test should PASS', () => {
-    	browser.waitForExist('.ac-gn-link', 5000);
+    it('should select by value', () => {
+    	browser.selectByValue('[data-qa-product-sizes-select]', 'F');
+
+        // Pause for 5 seconds to observe, the select box has been updated
+        browser.pause(1000);
     });
 
 });
