@@ -1,6 +1,10 @@
 ## Wdio Testing Environment
 Troubleshoot Wdio bugs/issues on an Environment matching the URBN Setup
 
+## Requirements
+
+[Node 6.9.5](https://nodejs.org/en/blog/release/v6.9.5/)
+
 ## Installation
 
 Clone this repo
