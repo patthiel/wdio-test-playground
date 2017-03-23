@@ -13,5 +13,9 @@ npm run selenium
 
 Keep this open, selenium should now be running.
 
-From another terminal tab, Run `gulp wdio` to start running the example test
+## Running Specs
+
+From another terminal tab, Run: 
+`npm run test` 
+to start running the example test
 
