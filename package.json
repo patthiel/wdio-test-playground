@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/gulp wdio",
-    "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install --version=3.3.0 && ./node_modules/selenium-standalone/bin/selenium-standalone start --version=3.3.0"
+    "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install --version=3.4.0 && ./node_modules/selenium-standalone/bin/selenium-standalone start --version=3.4.0"
   },
   "repository": {
     "type": "git",
