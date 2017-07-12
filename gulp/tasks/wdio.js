@@ -7,7 +7,7 @@ const ROOT = join(__dirname, '../wdio/');
 
 gulp.task('wdio', function() {
     // set target config
-    let config = 'a15.conf.js';
+    let config = 'wdio.conf.js';
 
     // set target spec
     if (argv.f) {

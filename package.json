@@ -4,8 +4,8 @@
   "description": "wdio testing playground",
   "main": "index.js",
   "scripts": {
-    "test": "e2e",
-    "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install && ./node_modules/selenium-standalone/bin/selenium-standalone start"
+    "test": "./node_modules/.bin/gulp wdio",
+    "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install --version=3.4.0 && ./node_modules/selenium-standalone/bin/selenium-standalone start --version=3.4.0"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
     "url": "https://github.com/patthiel/wdio-test-playground/issues"
   },
   "homepage": "https://github.com/patthiel/wdio-test-playground#readme",
+  "engine": "node >= 6.9.5",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
@@ -26,9 +27,9 @@
     "gulp": "^3.9.1",
     "gulp-webdriver": "^2.0.2",
     "ramda": "^0.22.1",
-    "selenium-standalone": "^5.8.0",
-    "wdio-jasmine-framework": "^0.2.6",
-    "webdriverio": "^4.2.15",
+    "selenium-standalone": "^6.0.0",
+    "wdio-jasmine-framework": "^0.3.0",
+    "webdriverio": "^4.6.0",
     "webpack": "^1.13.2",
     "yargs": "^6.0.0"
   }
