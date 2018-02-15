@@ -1,0 +1,17 @@
+exports.productPage = {
+    addToCart: '[data-qa-add-to-cart]',
+    addToRegistry: '[data-qa-add-to-registry]',
+    addToWishlist: '[data-qa-add-to-wishlist]',
+    bopis: '[data-qa-bopis]',
+    brandLogo: '[data-qa-brand-logo]',
+    breadcrumbNav: '[data-qa-breadcrumb-nav]',
+    productControls: '[data-qa-product-controls]',
+    productImage: '[data-qa-product-image]',
+    productSizesSelect: '[data-qa-product-sizes-select]',
+    productTitle: '[data-qa-product-title]',
+    quantity: '[data-qa-quantity]',
+    qtySelect: '[data-qa-qty-select]',
+    size: '[data-qa-size]',
+    sizeLabel: '[data-qa-size-label]',
+    sliderThumbnails: '[data-qa-slider-thumbnails]',
+};

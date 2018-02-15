@@ -4,6 +4,10 @@
   "description": "wdio testing playground",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run check:java || npm run install:cask || npm run install:java",
+    "check:java": "java --version && echo 'Java Installed, skipping'", 
+    "install:cask": "brew cask --version || brew tap caskroom/cask && npm run install:java",
+    "install:java": "brew cask install java",
     "test": "./node_modules/.bin/gulp wdio",
     "selenium": "./node_modules/selenium-standalone/bin/selenium-standalone install --version=3.4.0 && ./node_modules/selenium-standalone/bin/selenium-standalone start --version=3.4.0"
   },
@@ -29,8 +33,11 @@
     "ramda": "^0.22.1",
     "selenium-standalone": "^6.0.0",
     "wdio-jasmine-framework": "^0.3.0",
-    "webdriverio": "^4.6.0",
+    "webdriverio": "4.10.2",
     "webpack": "^1.13.2",
     "yargs": "^6.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5"
   }
 }
