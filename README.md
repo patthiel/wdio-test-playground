@@ -1,5 +1,5 @@
 ## Wdio Testing Environment
-Troubleshoot Wdio bugs/issues on an Environment matching the URBN Setup
+An environment to start experimenting with browser automation using Node,WebdriverIO and Selenium!
 
 ## Requirements
 
